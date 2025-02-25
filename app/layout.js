@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="antialiased">
       <head>
-        <link rel="icon" type="image/png" href="/images/logo.png" />
+        <link rel="icon" href="/favicon.ico" />
         <title>{metadata.title}</title>
         <meta
           property="og:title"
