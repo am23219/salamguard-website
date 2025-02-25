@@ -428,7 +428,7 @@ export default function Home() {
       {/* Stage 3: Spiritual */}
       <section 
         id="stage-3" 
-        className="relative min-h-screen py-20 flex items-center bg-gradient-to-b from-[#1F2937] to-[#111827] overflow-hidden"
+        className="relative min-h-screen py-20 items-center bg-gradient-to-b from-[#1F2937] to-[#111827] overflow-hidden"
       >
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
