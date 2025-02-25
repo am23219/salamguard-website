@@ -21,7 +21,7 @@ const geistMono = localFont({
 export const metadata = {
   title: "SalamGuard",
   description:
-    "Free tools and tips to help Muslims stay productive and halal in the digital age.",
+    "Transform your devices from sources of distraction into tools for growth. We'll show you exactly how.",
 };
 
 export default function RootLayout({ children }) {
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta
           property="og:title"
-          content="Protect Your Peace in a Digital World"
+          content="Your Complete Guide to Digital Purity & Productivity"
         />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:url" content="https://salamguard.com" />
