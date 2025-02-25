@@ -251,10 +251,8 @@ export default function AndroidPage() {
                         <div className="space-y-2">
                           {[
                            "Go to the downloaded file → Install",
-                           "If Permission is denied: Go to Settings",
-"Go to Security & Privacy",
-"Go to Install Unknown Apps",
-"Go to Chrome → Allow from this source",
+                           "If Permission is denied: Go to Settings → Security & Privacy → Install Unknown Apps → Allow from this source",
+                           "Within NewPipe, go to Settings → Content → Content of Main Page → Remove Default Kiosk and What's New"
                           ].map((step, stepIndex) => (
                             <div key={stepIndex} className="flex items-center">
                               <div className="w-5 h-5 rounded-full bg-[#162031] flex items-center justify-center text-[#61EBCE] text-xs mr-2">
