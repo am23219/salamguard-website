@@ -295,7 +295,7 @@ export default function IPhonePage() {
                   step: "Step 4: Lock Screen Time Settings (Important!)",
                   description: (
                     <>
-                      <strong>Option A (Recommended):</strong> Have a trusted friend lock your "Screen Time" settings using their Apple ID and password, not yours. This prevents you from resetting the password without their permission.<br /><br />
+                      <strong>Option A (Recommended):</strong> Have a trusted friend lock your &quot;Screen Time&quot; settings using their Apple ID and password, not yours. This prevents you from resetting the password without their permission.<br /><br />
                       
                       <strong>Option B:</strong> Use Password Locker to generate a complex passcode for yourself - not secure as you maintain reset ability
                     </>
