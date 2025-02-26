@@ -293,13 +293,15 @@ export default function IPhonePage() {
                 },
                 {
                   step: "Step 4: Lock Screen Time Settings (Important!)",
-                  description: `Have a trusted friend lock your "Screen Time" settings using their Apple ID and password, not yours. This prevents you from resetting the password without their permission.`,
+                  description: `Choose one of two methods to lock your Screen Time settings:
+
+Option A: Have a trusted friend lock your settings using their Apple ID (recommended)
+Option B: Use Password Locker to create a hard-to-remember passcode you control`,
                   images: [
                     {
                       src: "/images/ios/15.PNG",
                       alt: "15",
-                      subtitle:
-                        "Navigate back to the initial 'Screen Time' page.",
+                      subtitle: "Navigate back to the initial 'Screen Time' page.",
                     },
                     {
                       src: "/images/ios/16.PNG",
@@ -309,22 +311,36 @@ export default function IPhonePage() {
                     {
                       src: "/images/ios/17.PNG",
                       alt: "17",
-                      subtitle:
-                        "Have your trusted friend or mentor select a password to lock your settings. They do not share this password with you.",
+                      subtitle: "Choose your preferred locking method:",
                     },
                     {
                       src: "/images/ios/19.jpeg",
                       alt: "19",
-                      subtitle:
-                        "Have your trusted friend or mentor lock in the password with their own Apple ID-not yours!",
+                      subtitle: "Option A: Have a trusted friend lock with their Apple ID (not yours)",
                     },
                     {
                       src: "/images/ios/20.PNG",
                       alt: "20",
-                      subtitle:
-                        "Your 'Screen Time' settings are now locked and you should see 'Change Screen Time Passcode' in place of 'Lock Screen Time Settings.' You are done!",
+                      subtitle: "Option B: Visit password-locker.com to create a secure, hard-to-remember passcode",
                     },
                   ],
+                  additionalContent: (
+                    <div className="mt-6 p-4 bg-[#162031] rounded-lg border border-[#374151]">
+                      <h4 className="text-[#61EBCE] font-semibold mb-2">No Trusted Friend Available?</h4>
+                      <p className="text-gray-300 mb-4">
+                        Use Password Locker - a free service that helps you create and securely store a Screen Time passcode in a way you won't remember. Retrieval requires a ~20-minute process to prevent impulsive unblocking.
+                      </p>
+                      <Link
+                        href="https://password-locker.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-[#61EBCE] hover:text-[#51A4FA] transition-colors duration-300"
+                      >
+                        <span>Visit Password Locker</span>
+                        <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
+                      </Link>
+                    </div>
+                  ),
                 },
               ].map((item, index) => (
                 <div
@@ -370,6 +386,12 @@ export default function IPhonePage() {
                           </SwiperSlide>
                         ))}
                       </Swiper>
+                    </div>
+                  )}
+
+                  {item.additionalContent && (
+                    <div className="mt-6 p-4 bg-[#162031] rounded-lg border border-[#374151]">
+                      {item.additionalContent}
                     </div>
                   )}
 
