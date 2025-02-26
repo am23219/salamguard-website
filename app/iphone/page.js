@@ -293,10 +293,15 @@ export default function IPhonePage() {
                 },
                 {
                   step: "Step 4: Lock Screen Time Settings (Important!)",
-                  description: `Choose one of two methods to lock your Screen Time settings:
-
-Option A: Have a trusted friend lock your settings using their Apple ID (recommended)
-Option B: Use Password Locker to create a hard-to-remember passcode you control`,
+                  description: (
+                    <>
+                    <strong>Option A:</strong><br />
+                      Have a trusted friend lock your settings using their Apple ID (recommended)<br /><br />
+                      
+                      <strong>Option B:</strong><br />
+                      Use Password Locker to create a hard-to-remember passcode you control
+                    </>
+                  ),
                   images: [
                     {
                       src: "/images/ios/15.PNG",

@@ -250,15 +250,17 @@ export default function AndroidPage() {
                         <h4 className="text-[#61EBCE] font-medium mb-3">Follow these steps:</h4>
                         <div className="space-y-2">
                           {[
-                           "Go to the downloaded file → Install",
-                           "If Permission is denied: Go to Settings → Security & Privacy → Install Unknown Apps → Allow from this source",
-                           "Within NewPipe, go to Settings → Content → Content of Main Page → Remove Default Kiosk and What's New"
+                           "1. Go to the downloaded file → Install",
+                           "2. If Permission is denied:\n   Settings → Security & Privacy →\n   Install Unknown Apps → Allow from this source",
+                           "3. In NewPipe Settings:\n   Settings → Content →\n   Content of Main Page →\n   Remove Default Kiosk and What's New"
                           ].map((step, stepIndex) => (
-                            <div key={stepIndex} className="flex items-center">
-                              <div className="w-5 h-5 rounded-full bg-[#162031] flex items-center justify-center text-[#61EBCE] text-xs mr-2">
+                            <div key={stepIndex} className="flex items-start space-x-3 p-2">
+                              <div className="w-6 h-6 rounded-full bg-[#162031] flex items-center justify-center text-[#61EBCE] text-xs shrink-0 mt-1">
                                 {stepIndex + 1}
                               </div>
-                              <p className="text-gray-300 text-sm sm:text-base">{step}</p>
+                              <p className="text-gray-300 text-sm sm:text-base whitespace-pre-line leading-relaxed">
+                                {step}
+                              </p>
                             </div>
                           ))}
                         </div>

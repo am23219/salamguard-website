@@ -152,12 +152,12 @@ export default function RemindersPage() {
           </div>
   
           {/* View Toggle */}
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12 px-4">
             {["Talks", "Quran & Hadith", "Reminders"].map((type) => (
               <button
                 key={type}
                 onClick={() => setView(type)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 ${
+                className={`px-4 sm:px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 w-full sm:w-auto ${
                   view === type
                     ? "bg-[#61EBCE] text-gray-900"
                     : "bg-[#28324E] text-gray-200 hover:bg-[#3A4A60]"
