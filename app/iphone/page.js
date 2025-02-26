@@ -295,18 +295,17 @@ export default function IPhonePage() {
                   step: "Step 4: Lock Screen Time Settings (Important!)",
                   description: (
                     <>
-                    <strong>Option A:</strong><br />
-                      Have a trusted friend lock your settings using their Apple ID (recommended)<br /><br />
+                      <strong>Option A (Recommended):</strong> Have a trusted friend lock your "Screen Time" settings using their Apple ID and password, not yours. This prevents you from resetting the password without their permission.<br /><br />
                       
-                      <strong>Option B:</strong><br />
-                      Use Password Locker to create a hard-to-remember passcode you control
+                      <strong>Option B:</strong> Use Password Locker to generate a complex passcode for yourself - not secure as you maintain reset ability
                     </>
                   ),
                   images: [
                     {
                       src: "/images/ios/15.PNG",
                       alt: "15",
-                      subtitle: "Navigate back to the initial 'Screen Time' page.",
+                      subtitle:
+                        "Navigate back to the initial 'Screen Time' page.",
                     },
                     {
                       src: "/images/ios/16.PNG",
@@ -316,17 +315,20 @@ export default function IPhonePage() {
                     {
                       src: "/images/ios/17.PNG",
                       alt: "17",
-                      subtitle: "Choose your preferred locking method:",
+                      subtitle:
+                        "Have your trusted friend or mentor select a password to lock your settings. They do not share this password with you.",
                     },
                     {
                       src: "/images/ios/19.jpeg",
                       alt: "19",
-                      subtitle: "Option A: Have a trusted friend lock with their Apple ID (not yours)",
+                      subtitle:
+                        "Have your trusted friend or mentor lock in the password with their own Apple ID-not yours!",
                     },
                     {
                       src: "/images/ios/20.PNG",
                       alt: "20",
-                      subtitle: "Option B: Visit password-locker.com to create a secure, hard-to-remember passcode",
+                      subtitle:
+                        "Your 'Screen Time' settings are now locked and you should see 'Change Screen Time Passcode' in place of 'Lock Screen Time Settings.' You are done!",
                     },
                   ],
                   additionalContent: (
