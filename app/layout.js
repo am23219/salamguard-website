@@ -28,7 +28,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="antialiased">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <title>{metadata.title}</title>
         <meta
           property="og:title"
