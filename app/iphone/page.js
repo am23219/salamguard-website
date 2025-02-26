@@ -333,7 +333,7 @@ export default function IPhonePage() {
                     <div className="mt-6 p-4 bg-[#162031] rounded-lg border border-[#374151]">
                       <h4 className="text-[#61EBCE] font-semibold mb-2">No Trusted Friend Available?</h4>
                       <p className="text-gray-300 mb-4">
-                        Use Password Locker - a free service that helps you create and securely store a Screen Time passcode in a way you won't remember. Retrieval requires a ~20-minute process to prevent impulsive unblocking.
+                        Use Password Locker - a free service that helps you create and securely store a Screen Time passcode in a way you won&apos;t remember. Retrieval requires a ~20-minute process to prevent impulsive unblocking.
                       </p>
                       <Link
                         href="https://password-locker.com"
