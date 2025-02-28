@@ -388,22 +388,37 @@ export default function Home() {
                 href={card.href}
                 className="group"
               >
-                <div className="h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border border-[#374151] hover:border-[#3B82F6] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
-                  <div className="flex flex-col h-full">
-                    <div className="bg-[#3B82F6] p-4 rounded-full w-fit mb-6 shadow-md">
-                      <i className={`${card.icon} text-2xl text-[#1F2937]`}></i>
+                <div className="h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border border-[#374151] hover:border-[#3B82F6] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
+                  {/* Add subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="flex flex-col h-full relative">
+                    {/* Updated icon styling */}
+                    <div className="mb-6 relative">
+                      <div className="absolute inset-0 bg-[#3B82F6]/20 blur-xl rounded-full transform group-hover:scale-125 transition-transform duration-500"></div>
+                      <div className="relative bg-gradient-to-br from-[#3B82F6] to-[#60A5FA] p-4 rounded-2xl w-fit shadow-lg group-hover:shadow-[#3B82F6]/25 transition-all duration-500">
+                        <i className={`${card.icon} text-2xl text-white`}></i>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-4">
+
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#3B82F6] transition-colors duration-300">
                       {card.title}
                     </h3>
-                    <p className="text-gray-400 flex-grow">
+                    
+                    <p className="text-gray-400 flex-grow group-hover:text-gray-300 transition-colors duration-300">
                       {card.description}
                     </p>
+
+                    {/* Updated button styling */}
                     <div className="mt-6">
-                      <div className="bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] p-px rounded-lg inline-block">
-                        <div className="px-6 py-2 rounded-lg bg-[#1F2937] group-hover:bg-transparent transition-colors">
-                          <span className="text-[#3B82F6] group-hover:text-white font-medium">
-                            Learn More →
+                      <div className="relative group/button inline-block">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] rounded-lg blur group-hover/button:blur-md transition-all duration-300"></div>
+                        <div className="relative px-6 py-2 rounded-lg bg-[#1F2937] group-hover:bg-transparent transition-colors duration-300">
+                          <span className="text-[#3B82F6] group-hover:text-white font-medium inline-flex items-center">
+                            Learn More 
+                            <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
                           </span>
                         </div>
                       </div>
@@ -428,73 +443,85 @@ export default function Home() {
       {/* Stage 3: Spiritual */}
       <section 
         id="stage-3" 
-        className="relative min-h-screen py-20 items-center bg-gradient-to-b from-[#1F2937] to-[#111827] overflow-hidden"
+        className="relative min-h-screen py-20 flex items-center bg-gradient-to-b from-[#1F2937] to-[#111827] overflow-hidden"
       >
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#10B981]/5 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="flex-1 flex items-center">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <div className="animate-fade-up">
-                  <div className="bg-[#10B981] p-5 rounded-full shadow-md mb-4 inline-block">
-                    <i className="fas fa-heart text-3xl text-[#1F2937]"></i>
-                  </div>
-                </div>
-                <h2 className="animate-fade-up delay-200 text-4xl font-extrabold">
-                  <span className="text-[#10B981]">Stage 3:</span> Strengthen Your Spiritual Guard
-                </h2>
-                <p className="animate-fade-up delay-400 text-gray-400 text-lg mt-4">
-                  Build a spiritual shield to protect yourself and your community
-                </p>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <div className="animate-fade-up">
+              <div className="bg-[#10B981] p-5 rounded-full shadow-md mb-4 inline-block">
+                <i className="fas fa-heart text-3xl text-[#1F2937]"></i>
               </div>
+            </div>
+            <h2 className="animate-fade-up delay-200 text-4xl font-extrabold">
+              <span className="text-[#10B981]">Stage 3:</span> Strengthen Your Spiritual Guard
+            </h2>
+            <p className="animate-fade-up delay-400 text-gray-400 text-lg mt-4">
+              Build a spiritual shield to protect yourself and your community
+            </p>
+          </div>
 
-              {/* Spiritual Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {spiritualCards.map((card, index) => (
-                  <Link 
-                    key={index} 
-                    href={card.href}
-                    className="group"
-                  >
-                    <div className="h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border border-[#374151] hover:border-[#10B981] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
-                      <div className="flex flex-col h-full">
-                        <div className="bg-[#10B981] p-4 rounded-full w-fit mb-6 shadow-md">
-                          <i className={`${card.icon} text-2xl text-[#1F2937]`}></i>
-                        </div>
-                        <h3 className="text-xl font-bold text-white mb-4">
-                          {card.title}
-                        </h3>
-                        <p className="text-gray-400 flex-grow">
-                          {card.description}
-                        </p>
-                        <div className="mt-6">
-                          <div className="bg-gradient-to-r from-[#10B981] to-[#34D399] p-px rounded-lg inline-block">
-                            <div className="px-6 py-2 rounded-lg bg-[#1F2937] group-hover:bg-transparent transition-colors">
-                              <span className="text-[#10B981] group-hover:text-white font-medium">
-                                {card.buttonText} →
-                              </span>
-                            </div>
-                          </div>
+          {/* Spiritual Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {spiritualCards.map((card, index) => (
+              <Link 
+                key={index} 
+                href={card.href}
+                className="group"
+              >
+                <div className="h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border border-[#374151] hover:border-[#10B981] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
+                  {/* Add subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="flex flex-col h-full relative">
+                    {/* Updated icon styling */}
+                    <div className="mb-6 relative">
+                      <div className="absolute inset-0 bg-[#10B981]/20 blur-xl rounded-full transform group-hover:scale-125 transition-transform duration-500"></div>
+                      <div className="relative bg-gradient-to-br from-[#10B981] to-[#34D399] p-4 rounded-2xl w-fit shadow-lg group-hover:shadow-[#10B981]/25 transition-all duration-500">
+                        <i className={`${card.icon} text-2xl text-white`}></i>
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#10B981] transition-colors duration-300">
+                      {card.title}
+                    </h3>
+                    
+                    <p className="text-gray-400 flex-grow group-hover:text-gray-300 transition-colors duration-300">
+                      {card.description}
+                    </p>
+
+                    {/* Updated button styling */}
+                    <div className="mt-6">
+                      <div className="relative group/button inline-block">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#10B981] to-[#34D399] rounded-lg blur group-hover/button:blur-md transition-all duration-300"></div>
+                        <div className="relative px-6 py-2 rounded-lg bg-[#1F2937] group-hover:bg-transparent transition-colors duration-300">
+                          <span className="text-[#10B981] group-hover:text-white font-medium inline-flex items-center">
+                            {card.buttonText}
+                            <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                          </span>
                         </div>
                       </div>
                     </div>
-                  </Link>
-                ))}
-              </div>
-              <div className="text-center mt-12">
-                <button 
-                  onClick={() => document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })}
-                  className="group px-6 py-3 bg-gradient-to-r from-[#10B981] to-[#34D399] text-white rounded-full text-lg font-semibold hover:shadow-lg transform transition-all duration-300 hover:scale-105"
-                >
-                  Back to Top
-                  <i className="fas fa-arrow-up ml-2 group-hover:-translate-y-1 transition-transform duration-300"></i>
-                </button>
-              </div>
-            </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <button 
+              onClick={() => document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })}
+              className="group px-6 py-3 bg-gradient-to-r from-[#10B981] to-[#34D399] text-white rounded-full text-lg font-semibold hover:shadow-lg transform transition-all duration-300 hover:scale-105"
+            >
+              Back to Top
+              <i className="fas fa-arrow-up ml-2 group-hover:-translate-y-1 transition-transform duration-300"></i>
+            </button>
           </div>
         </div>
       </section>
