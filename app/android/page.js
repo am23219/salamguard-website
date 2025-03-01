@@ -286,7 +286,7 @@ export default function AndroidPage() {
                     
                     <div className="flex justify-center space-x-4 pt-4">
                       <Link
-                        href="https://play.google.com/store/apps/details?id=com.google.android.apps.kids.familylink&hl=en_US"
+                        href="https://play.google.com/store/apps/details?id=com.ihyatech.tahir"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-[135px] sm:w-[180px]"

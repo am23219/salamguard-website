@@ -386,22 +386,50 @@ export default function Home() {
               <Link 
                 key={index} 
                 href={card.href}
-                className="group"
+                className={`group ${card.title.includes('Dumb Phone') ? 'md:scale-[1.02] md:shadow-lg' : ''}`}
               >
-                <div className="h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border border-[#374151] hover:border-[#3B82F6] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
-                  {/* Add subtle gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className={`h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border ${
+                  card.title.includes('Dumb Phone') 
+                    ? 'border-[#3B82F6] shadow-lg' 
+                    : 'border-[#374151]'
+                } hover:border-[#3B82F6] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden`}>
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Recommended badge for dumb phone */}
+                  {card.title.includes('Dumb Phone') && (
+                    <div className="absolute top-3 right-3">
+                      <div className="bg-[#3B82F6]/10 text-[#3B82F6] text-xs font-medium px-3 py-1 rounded-full border border-[#3B82F6]/20 backdrop-blur-sm">
+                        Recommended
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="flex flex-col h-full relative">
-                    {/* Updated icon styling */}
-                    <div className="mb-6 relative">
-                      <div className="absolute inset-0 bg-[#3B82F6]/20 blur-xl rounded-full transform group-hover:scale-125 transition-transform duration-500"></div>
-                      <div className="relative bg-gradient-to-br from-[#3B82F6] to-[#60A5FA] p-4 rounded-2xl w-fit shadow-lg group-hover:shadow-[#3B82F6]/25 transition-all duration-500">
-                        <i className={`${card.icon} text-2xl text-white`}></i>
+                    {/* Icon container */}
+                    <div className="mb-6">
+                      <div className={`relative p-4 rounded-2xl w-fit ${
+                        card.title.includes('Dumb Phone')
+                          ? 'bg-gradient-to-br from-[#3B82F6]/20 to-[#3B82F6]/5'
+                          : 'bg-[#1F2937]'
+                      } transition-colors duration-300`}>
+                        <i className={`${
+                          card.title.includes('Dumb Phone') 
+                            ? 'fas fa-mobile-alt' 
+                            : card.icon
+                        } text-2xl ${
+                          card.title.includes('Dumb Phone') 
+                            ? 'text-[#3B82F6]' 
+                            : 'text-white group-hover:text-[#3B82F6]'
+                        } transition-colors duration-300`}></i>
                       </div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#3B82F6] transition-colors duration-300">
+                    <h3 className={`text-xl font-bold mb-4 ${
+                      card.title.includes('Dumb Phone')
+                        ? 'text-[#3B82F6]'
+                        : 'text-white group-hover:text-[#3B82F6]'
+                    } transition-colors duration-300`}>
                       {card.title}
                     </h3>
                     
@@ -409,12 +437,15 @@ export default function Home() {
                       {card.description}
                     </p>
 
-                    {/* Updated button styling */}
+                    {/* Button with enhanced hover effect */}
                     <div className="mt-6">
-                      <div className="relative group/button inline-block">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] rounded-lg blur group-hover/button:blur-md transition-all duration-300"></div>
-                        <div className="relative px-6 py-2 rounded-lg bg-[#1F2937] group-hover:bg-transparent transition-colors duration-300">
-                          <span className="text-[#3B82F6] group-hover:text-white font-medium inline-flex items-center">
+                      <div className="inline-block">
+                        <div className={`px-6 py-2 rounded-lg transition-all duration-300 ${
+                          card.title.includes('Dumb Phone')
+                            ? 'bg-[#3B82F6]/10 group-hover:bg-[#3B82F6]/20'
+                            : 'bg-[#1F2937] group-hover:bg-[#3B82F6]/10'
+                        }`}>
+                          <span className="text-[#3B82F6] font-medium inline-flex items-center">
                             Learn More 
                             <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -475,14 +506,13 @@ export default function Home() {
               >
                 <div className="h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border border-[#374151] hover:border-[#10B981] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
                   {/* Add subtle gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <div className="flex flex-col h-full relative">
                     {/* Updated icon styling */}
                     <div className="mb-6 relative">
-                      <div className="absolute inset-0 bg-[#10B981]/20 blur-xl rounded-full transform group-hover:scale-125 transition-transform duration-500"></div>
-                      <div className="relative bg-gradient-to-br from-[#10B981] to-[#34D399] p-4 rounded-2xl w-fit shadow-lg group-hover:shadow-[#10B981]/25 transition-all duration-500">
-                        <i className={`${card.icon} text-2xl text-white`}></i>
+                      <div className="relative bg-gradient-to-br from-[#10B981]/20 to-[#10B981]/5 p-4 rounded-2xl w-fit transition-colors duration-300">
+                        <i className={`${card.icon} text-2xl text-[#10B981] group-hover:text-white transition-colors duration-300`}></i>
                       </div>
                     </div>
 
@@ -496,10 +526,9 @@ export default function Home() {
 
                     {/* Updated button styling */}
                     <div className="mt-6">
-                      <div className="relative group/button inline-block">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#10B981] to-[#34D399] rounded-lg blur group-hover/button:blur-md transition-all duration-300"></div>
-                        <div className="relative px-6 py-2 rounded-lg bg-[#1F2937] group-hover:bg-transparent transition-colors duration-300">
-                          <span className="text-[#10B981] group-hover:text-white font-medium inline-flex items-center">
+                      <div className="inline-block">
+                        <div className="px-6 py-2 rounded-lg bg-[#10B981]/10 group-hover:bg-[#10B981]/20 transition-colors duration-300">
+                          <span className="text-[#10B981] font-medium inline-flex items-center">
                             {card.buttonText}
                             <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
