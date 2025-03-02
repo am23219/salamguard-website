@@ -365,108 +365,110 @@ export default function Home() {
           <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-[#3B82F6]/5 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <div className="stagger-item delay-100">
-              <div className="bg-[#3B82F6] p-5 rounded-full shadow-md mb-4 inline-block">
-                <i className="fas fa-cog text-3xl text-[#1F2937]"></i>
+        <div className="w-full">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-12">
+              <div className="stagger-item delay-100">
+                <div className="bg-[#3B82F6] p-5 rounded-full shadow-md mb-4 inline-block">
+                  <i className="fas fa-cog text-3xl text-[#1F2937]"></i>
+                </div>
               </div>
+              <h2 className="stagger-item delay-200 text-4xl font-extrabold">
+                <span className="text-[#3B82F6]">Stage 2:</span> Optimize Your Devices
+              </h2>
+              <p className="stagger-item delay-300 text-gray-400 text-lg mt-4">
+                Take control of your devices with these powerful tools
+              </p>
             </div>
-            <h2 className="stagger-item delay-200 text-4xl font-extrabold">
-              <span className="text-[#3B82F6]">Stage 2:</span> Optimize Your Devices
-            </h2>
-            <p className="stagger-item delay-300 text-gray-400 text-lg mt-4">
-              Take control of your devices with these powerful tools
-            </p>
-          </div>
 
-          {/* Options Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {optimizeCards.map((card, index) => (
-              <Link 
-                key={index} 
-                href={card.href}
-                className={`group ${card.title.includes('Dumb Phone') ? 'md:scale-[1.02] md:shadow-lg' : ''}`}
-              >
-                <div className={`h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border ${
-                  card.title.includes('Dumb Phone') 
-                    ? 'border-[#3B82F6] shadow-lg' 
-                    : 'border-[#374151]'
-                } hover:border-[#3B82F6] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden`}>
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Recommended badge for dumb phone */}
-                  {card.title.includes('Dumb Phone') && (
-                    <div className="absolute top-3 right-3">
-                      <div className="bg-[#3B82F6]/10 text-[#3B82F6] text-xs font-medium px-3 py-1 rounded-full border border-[#3B82F6]/20 backdrop-blur-sm">
-                        Recommended
-                      </div>
-                    </div>
-                  )}
-                  
-                  <div className="flex flex-col h-full relative">
-                    {/* Icon container */}
-                    <div className="mb-6">
-                      <div className={`relative p-4 rounded-2xl w-fit ${
-                        card.title.includes('Dumb Phone')
-                          ? 'bg-gradient-to-br from-[#3B82F6]/20 to-[#3B82F6]/5'
-                          : 'bg-[#1F2937]'
-                      } transition-colors duration-300`}>
-                        <i className={`${
-                          card.title.includes('Dumb Phone') 
-                            ? 'fas fa-mobile-alt' 
-                            : card.icon
-                        } text-2xl ${
-                          card.title.includes('Dumb Phone') 
-                            ? 'text-[#3B82F6]' 
-                            : 'text-white group-hover:text-[#3B82F6]'
-                        } transition-colors duration-300`}></i>
-                      </div>
-                    </div>
-
-                    <h3 className={`text-xl font-bold mb-4 ${
-                      card.title.includes('Dumb Phone')
-                        ? 'text-[#3B82F6]'
-                        : 'text-white group-hover:text-[#3B82F6]'
-                    } transition-colors duration-300`}>
-                      {card.title}
-                    </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+              {optimizeCards.map((card, index) => (
+                <Link 
+                  key={index} 
+                  href={card.href}
+                  className={`group ${card.title.includes('Dumb Phone') ? 'md:scale-[1.02] md:shadow-lg' : ''}`}
+                >
+                  <div className={`h-full p-8 rounded-xl bg-gradient-to-br from-[#28324E] to-[#1F2937] border ${
+                    card.title.includes('Dumb Phone') 
+                      ? 'border-[#3B82F6] shadow-lg' 
+                      : 'border-[#374151]'
+                  } hover:border-[#3B82F6] shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden`}>
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
-                    <p className="text-gray-400 flex-grow group-hover:text-gray-300 transition-colors duration-300">
-                      {card.description}
-                    </p>
-
-                    {/* Button with enhanced hover effect */}
-                    <div className="mt-6">
-                      <div className="inline-block">
-                        <div className={`px-6 py-2 rounded-lg transition-all duration-300 ${
+                    {/* Recommended badge for dumb phone */}
+                    {card.title.includes('Dumb Phone') && (
+                      <div className="absolute top-3 right-3">
+                        <div className="bg-[#3B82F6]/10 text-[#3B82F6] text-xs font-medium px-3 py-1 rounded-full border border-[#3B82F6]/20 backdrop-blur-sm">
+                          Recommended
+                        </div>
+                      </div>
+                    )}
+                    
+                    <div className="flex flex-col h-full relative">
+                      {/* Icon container */}
+                      <div className="mb-6">
+                        <div className={`relative p-4 rounded-2xl w-fit ${
                           card.title.includes('Dumb Phone')
-                            ? 'bg-[#3B82F6]/10 group-hover:bg-[#3B82F6]/20'
-                            : 'bg-[#1F2937] group-hover:bg-[#3B82F6]/10'
-                        }`}>
-                          <span className="text-[#3B82F6] font-medium inline-flex items-center">
-                            Learn More 
-                            <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
-                          </span>
+                            ? 'bg-gradient-to-br from-[#3B82F6]/20 to-[#3B82F6]/5'
+                            : 'bg-[#1F2937]'
+                        } transition-colors duration-300`}>
+                          <i className={`${
+                            card.title.includes('Dumb Phone') 
+                              ? 'fas fa-mobile-alt' 
+                              : card.icon
+                          } text-2xl ${
+                            card.title.includes('Dumb Phone') 
+                              ? 'text-[#3B82F6]' 
+                              : 'text-white group-hover:text-[#3B82F6]'
+                          } transition-colors duration-300`}></i>
+                        </div>
+                      </div>
+
+                      <h3 className={`text-xl font-bold mb-4 ${
+                        card.title.includes('Dumb Phone')
+                          ? 'text-[#3B82F6]'
+                          : 'text-white group-hover:text-[#3B82F6]'
+                      } transition-colors duration-300`}>
+                        {card.title}
+                      </h3>
+                      
+                      <p className="text-gray-400 flex-grow group-hover:text-gray-300 transition-colors duration-300">
+                        {card.description}
+                      </p>
+
+                      {/* Button with enhanced hover effect */}
+                      <div className="mt-6">
+                        <div className="inline-block">
+                          <div className={`px-6 py-2 rounded-lg transition-all duration-300 ${
+                            card.title.includes('Dumb Phone')
+                              ? 'bg-[#3B82F6]/10 group-hover:bg-[#3B82F6]/20'
+                              : 'bg-[#1F2937] group-hover:bg-[#3B82F6]/10'
+                          }`}>
+                            <span className="text-[#3B82F6] font-medium inline-flex items-center">
+                              Learn More 
+                              <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                              </svg>
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <button 
-              onClick={() => document.getElementById('stage-3').scrollIntoView({ behavior: 'smooth' })}
-              className="group px-6 py-3 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white rounded-full text-lg font-semibold hover:shadow-lg transform transition-all duration-300 hover:scale-105"
-            >
-              Continue to Stage 3
-              <i className="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform duration-300"></i>
-            </button>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center animate-fade-up delay-1200">
+              <button 
+                onClick={() => document.getElementById('stage-3').scrollIntoView({ behavior: 'smooth' })}
+                className="group px-8 py-4 bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white rounded-full text-lg font-semibold hover:shadow-lg transform transition-all duration-300 hover:scale-105"
+              >
+                Continue to Stage 3
+                <i className="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform duration-300"></i>
+              </button>
+            </div>
           </div>
         </div>
       </section>
