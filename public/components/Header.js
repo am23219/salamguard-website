@@ -53,7 +53,7 @@ const THREE_STAGE_ITEMS = [
 const Logo = () => (
   <Link href="/" className="flex items-center space-x-2">
     <i className="fas fa-shield-alt text-[#61EBCE] text-xl"></i>
-    <span className="text-xl font-semibold tracking-wide">
+    <span className="text-xl font-semibold tracking-wide text-white">
       Salam<span className="text-[#61EBCE]">Guard</span>
     </span>
   </Link>
