@@ -37,7 +37,9 @@ export async function generateStaticParams() {
 
 // Function to generate metadata for the page
 export async function generateMetadata({ params }) {
-  const { category, article } = params;
+  // Await params before destructuring
+  const resolvedParams = await params;
+  const { category, article } = resolvedParams;
   
   // Get the article title for metadata
   let title = article.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
@@ -68,11 +70,12 @@ function getCategoryTitle(category) {
 
 // Server component that fetches data and renders the page
 export default async function ArticlePage({ params }) {
-  const { category, article } = params;
+  // Await params before destructuring
+  const resolvedParams = await params;
+  const { category, article } = resolvedParams;
   
   // Try to fetch the article content at build/request time
   let articleContent = '';
-  let error = null;
   
   try {
     // Direct file access from the server component
