@@ -545,14 +545,48 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <button 
-              onClick={() => document.getElementById('hero').scrollIntoView({ behavior: 'smooth' })}
-              className="group px-6 py-3 bg-gradient-to-r from-[#10B981] to-[#34D399] text-white rounded-full text-lg font-semibold hover:shadow-lg transform transition-all duration-300 hover:scale-105"
-            >
-              Back to Top
-              <i className="fas fa-arrow-up ml-2 group-hover:-translate-y-1 transition-transform duration-300"></i>
-            </button>
+          {/* Community transition element */}
+          <div className="max-w-lg mx-auto my-12 relative">
+            <div className="h-px bg-gradient-to-r from-transparent via-[#10B981]/30 to-transparent"></div>
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1F2937] px-4">
+              <i className="fas fa-users text-[#10B981]"></i>
+            </div>
+          </div>
+
+          {/* Updated WhatsApp community card */}
+          <div className="text-center">
+            <div className="max-w-lg mx-auto bg-gradient-to-br from-[#1F2937] to-[#1B2432] border border-[#10B981]/30 p-6 md:p-8 rounded-xl shadow-xl hover:shadow-[0_0_25px_rgba(16,185,129,0.2)] transition-all duration-500 transform hover:scale-[1.02] relative overflow-hidden animate-fade-up delay-400">
+              {/* Background glow effect */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#10B981]/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#10B981]/5 rounded-full blur-3xl"></div>
+              
+              <div className="relative">
+                <div className="flex flex-col md:flex-row items-center justify-center md:justify-start md:space-x-4 mb-6">
+                  <div className="bg-gradient-to-br from-[#10B981] to-[#34D399] p-4 rounded-full shadow-lg mb-4 md:mb-0">
+                    <i className="fab fa-whatsapp text-2xl text-white"></i>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">Join Our Salamguard Community</h3>
+                    <p className="text-[#10B981] text-sm mt-1">Connect • Learn • Grow Together</p>
+                  </div>
+                </div>
+                
+                <p className="text-gray-300 mb-6 max-w-md mx-auto md:text-left">
+                  Stay updated with resources, tips, and connect with others committed to perfecting their digital discipline
+                </p>
+                
+                <button 
+                  onClick={() => window.open("https://chat.whatsapp.com/EPOGYMPGzpBD2ZKTzV9zHw", "_blank")}
+                  className="group w-full py-3 bg-gradient-to-r from-[#10B981] to-[#34D399] text-white rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-[1.02] flex items-center justify-center"
+                >
+                  <i className="fab fa-whatsapp mr-2 text-xl"></i>
+                  Join WhatsApp Group
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
